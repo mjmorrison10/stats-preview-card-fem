@@ -1,0 +1,123 @@
+:root {
+  --mainParagraph: hsla(0, 0%, 100%, 0.75);
+  --statHeadings: hsla(0, 0%, 100%, 0.6);
+
+  --veryDarkBlue-hue: 233;
+  --veryDarkBlue-sat: 47%;
+  --veryDarkBlue-light: 7%;
+  --veryDarkBlue: hsl(
+    var(--veryDarkBlue-hue),
+    var(--veryDarkBlue-sat),
+    var(--veryDarkBlue-light)
+  );
+
+  --darkDesaturatedBlue-hue: 244;
+  --darkDesaturatedBlue-sat: 38%;
+  --darkDesaturatedBlue-light: 16%;
+  --darkDesaturatedBlue: hsl(
+    var(--darkDesaturatedBlue-hue),
+    var(--darkDesaturatedBlue-sat),
+    var(--darkDesaturatedBlue-light)
+  );
+
+  --softViolet-hue: 277;
+  --softViolet-sat: 64%;
+  --softViolet-light: 61%;
+  --softViolet: hsl(
+    var(--softViolet-hue),
+    var(--softViolet-sat),
+    var(--softViolet-light)
+  );
+
+  --ff: "Inter", sans-serif;
+  --ff2: "Lexend Deca", sans-serif;
+
+  --spacing: 50px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: var(--ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--veryDarkBlue);
+}
+
+.container {
+  display: flex;
+  height: 400px;
+  /* max-width: 1000px; */
+  width: 1000px;
+}
+
+.container-left {
+  padding: var(--spacing);
+  display: flex;
+  flex-grow: 1;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  /* text-align: center; */
+  background-color: var(--darkDesaturatedBlue);
+}
+
+.container-left .title {
+  color: white;
+  margin-right: var(--spacing);
+}
+
+.container-left .title span {
+  color: var(--softViolet);
+}
+
+.container-left .text {
+  color: var(--mainParagraph);
+  font-size: 14px;
+  margin-right: var(--spacing);
+}
+
+.container-left .status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: var(--spacing);
+}
+
+.container-left .status h2 {
+  color: white;
+  margin: 0;
+  margin-top: var(--spacing);
+  font-size: 15px;
+}
+
+.container-left .status .heading {
+  color: var(--statHeadings);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.container-right {
+  height: 100%;
+  flex-grow: 1;
+  /* width: 500px; */
+  background-color: var(--softViolet);
+}
+
+.container-right img {
+  opacity: 0.5;
+  object-fit: cover;
+  height: 100%;
+}
+
+@media (max-width: 375px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+}
